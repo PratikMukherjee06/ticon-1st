@@ -1,1 +1,212 @@
-# ticon-1st
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRICONE • Cultivate the Moment • namaste@triconetribe.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #fffaf5; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .page {
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        .page::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.65), rgba(212,165,36,0.65));
+            z-index: 1;
+        }
+        .content { z-index: 2; position: relative; }
+        .mascot {
+            animation: popShimmer 1.8s ease-out forwards;
+            box-shadow: 0 0 30px #d4a524;
+        }
+        @keyframes popShimmer {
+            0% { opacity: 0; transform: scale(0.75) rotate(-8deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        /* OPTIMIZED BUTTON HOVER */
+        .btn {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 15px 25px -5px rgb(212 165 36 / 0.4);
+            background-position: right center;
+        }
+        .btn-gold {
+            background: linear-gradient(90deg, #d4a524, #b8860b);
+            background-size: 200% 100%;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+<nav class="bg-white border-b-4 border-[#d4a524] sticky top-0 z-50 shadow-md">
+    <div class="max-w-screen-2xl mx-auto px-4 md:px-8 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="text-2xl md:text-4xl font-black text-[#d4a524] tracking-widest">TRICONE</span>
+                <div class="hidden md:block bg-[#d4a524]/10 text-xs px-3 py-1 rounded font-medium text-[#d4a524]">SHIVA × SHAKTI</div>
+            </div>
+            
+            <button onclick="toggleMobileMenu()" class="md:hidden text-[#d4a524] text-3xl focus:outline-none">
+                ☰
+            </button>
+
+            <div class="hidden md:flex items-center gap-4 lg:gap-6">
+                <a href="#" onclick="switchPage(1)" class="font-medium text-[#d4a524] hover:text-[#b8860b] text-sm lg:text-base">HOME</a>
+                <a href="#" onclick="switchPage(2)" class="text-[#d4a524] hover:text-[#b8860b] text-sm lg:text-base">PRODUCTS</a>
+                <a href="#" onclick="switchPage(3)" class="text-[#d4a524] hover:text-[#b8860b] text-sm lg:text-base">PHILOSOPHY</a>
+                <a href="#" onclick="switchPage(4)" class="text-[#d4a524] hover:text-[#b8860b] text-sm lg:text-base">COMMUNITY</a>
+                <a href="#" onclick="switchPage(5)" class="text-[#d4a524] hover:text-[#b8860b] text-sm lg:text-base">ABOUT</a>
+                <button onclick="contactNow()" class="btn btn-gold text-white px-4 lg:px-8 py-2 lg:py-3 font-bold rounded-xl text-sm lg:text-base">MESSAGE TRIBE</button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden flex-col gap-4 mt-6 pb-4 md:hidden text-center">
+            <a href="#" onclick="switchPage(1); toggleMobileMenu()" class="font-medium text-[#d4a524] hover:text-[#b8860b] block py-2 border-b border-[#d4a524]/20">HOME</a>
+            <a href="#" onclick="switchPage(2); toggleMobileMenu()" class="text-[#d4a524] hover:text-[#b8860b] block py-2 border-b border-[#d4a524]/20">PRODUCTS</a>
+            <a href="#" onclick="switchPage(3); toggleMobileMenu()" class="text-[#d4a524] hover:text-[#b8860b] block py-2 border-b border-[#d4a524]/20">PHILOSOPHY</a>
+            <a href="#" onclick="switchPage(4); toggleMobileMenu()" class="text-[#d4a524] hover:text-[#b8860b] block py-2 border-b border-[#d4a524]/20">COMMUNITY</a>
+            <a href="#" onclick="switchPage(5); toggleMobileMenu()" class="text-[#d4a524] hover:text-[#b8860b] block py-2 border-b border-[#d4a524]/20">ABOUT + CONTACT</a>
+            <button onclick="contactNow(); toggleMobileMenu()" class="btn btn-gold text-white w-full py-4 font-bold rounded-xl mt-2">MESSAGE THE TRIBE</button>
+        </div>
+    </div>
+</nav>
+
+<div id="page1" class="page" style="background-image: url('comic1.jpg');">
+    <div class="content min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 py-12">
+        <img src="comic1.jpg" class="mascot w-40 md:w-52 mx-auto mb-6 md:mb-8 rounded-xl" alt="KA-BLING">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-wider text-white drop-shadow-lg">TRICONE</h1>
+        <p class="text-xl md:text-3xl text-[#ffe6b3] mt-2">"Don't Chase a High. Cultivate a Moment"</p>
+        <p class="mt-4 max-w-lg text-white text-sm md:text-base mx-auto">Premium Organic Pre-Rolled Cones • Reusable Slider Packs • Conscious Luxury</p>
+        <div class="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8 md:mt-10 w-full sm:w-auto px-4 sm:px-0">
+            <button onclick="switchPage(2)" class="btn btn-gold text-white w-full sm:w-auto px-6 py-4 md:px-12 md:py-5 font-bold rounded-xl text-sm md:text-base">EXPLORE THE COLLECTION</button>
+            <button onclick="switchPage(3)" class="btn border-4 border-white text-white w-full sm:w-auto px-6 py-4 md:px-12 md:py-5 font-bold rounded-xl hover:bg-white hover:text-[#d4a524] text-sm md:text-base">ENTER THE PHILOSOPHY</button>
+        </div>
+    </div>
+</div>
+
+<div id="page2" class="page hidden" style="background-image: url('comic2.jpg');">
+    <div class="content min-h-screen pt-16 md:pt-24 px-4 md:px-8 pb-12 max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-5xl text-center text-white drop-shadow">Crafted for Conscious Sessions</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-2 md:gap-12 my-6 md:my-8 text-[#ffe6b3] font-medium text-center text-sm md:text-base">
+            <span>ENIGMA TYCOON</span> <span class="hidden md:inline">•</span> <span>CATTLE KING</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div class="bg-white/90 border-2 border-[#d4a524] p-6 md:p-8 rounded-2xl">
+                <h3 class="font-bold text-[#d4a524] text-lg md:text-xl">3 CONE SLIDER PACK — ₹40</h3>
+                <ul class="mt-4 space-y-3 text-sm md:text-base text-slate-700">
+                    <li>✓ 3 × 109mm Organic Cones</li>
+                    <li>✓ Reusable Magnetic Hard Case</li>
+                    <li>✓ Perfect Even Burn</li>
+                </ul>
+                <button onclick="contactNow()" class="btn btn-gold mt-6 md:mt-8 w-full py-4 md:py-5 text-white font-bold rounded-xl text-sm md:text-base">SEND INQUIRY — I WANT THIS</button>
+            </div>
+            <div class="bg-white/90 border-2 border-[#d4a524] p-6 md:p-8 rounded-2xl">
+                <h3 class="font-bold text-[#d4a524] text-lg md:text-xl">6 CONE SLIDER PACK — ₹80</h3>
+                <ul class="mt-4 space-y-3 text-sm md:text-base text-slate-700">
+                    <li>✓ 6 × Premium Cones + 2 Cases</li>
+                    <li>✓ Gift-Ready Cosmic Box</li>
+                    <li>✓ Ideal for Sacred Sharing</li>
+                </ul>
+                <button onclick="contactNow()" class="btn btn-gold mt-6 md:mt-8 w-full py-4 md:py-5 text-white font-bold rounded-xl text-sm md:text-base">SEND INQUIRY — I WANT THIS</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="page3" class="page hidden" style="background-image: url('comic3.jpg');">
+    <div class="content min-h-screen flex items-center justify-center text-center px-4 md:px-8 py-12">
+        <div class="max-w-lg bg-white/90 p-6 md:p-10 rounded-2xl md:rounded-3xl text-center w-full">
+            <h2 class="text-2xl md:text-4xl text-[#d4a524]">THE CONSCIOUSNESS BEHIND TRICONE</h2>
+            <p class="my-4 md:my-6 text-slate-700 text-sm md:text-base">Shiva destroys the ego.<br>Shakti creates presence.<br>Every Tricone moment is a sacred ritual of balance.</p>
+            <div class="bg-[#d4a524]/10 p-4 md:p-6 border border-[#d4a524] rounded-xl text-sm md:text-base">
+                <strong class="text-[#d4a524]">SMOKING & RESPONSIBILITY</strong><br>
+                Moderation is the highest form of power. Respect the plant. Respect your breath.
+            </div>
+            <button onclick="switchPage(5)" class="btn border-4 border-[#d4a524] text-[#d4a524] w-full sm:w-auto px-6 py-3 md:px-12 md:py-3 mt-6 md:mt-8 font-bold hover:bg-[#d4a524] hover:text-white rounded-xl text-sm md:text-base">I ACCEPT • CONTACT TRICONE</button>
+        </div>
+    </div>
+</div>
+
+<div id="page4" class="page hidden" style="background-image: url('comic4.jpg');">
+    <div class="content min-h-screen flex flex-col items-center justify-center text-center px-4 py-12">
+        <h2 class="text-3xl md:text-5xl text-white drop-shadow">THE TRICONE COMMUNITY</h2>
+        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 my-6 md:my-8 flex-wrap justify-center w-full">
+            <div class="bg-white/90 px-4 py-3 md:px-6 border border-[#d4a524] text-[#d4a524] rounded-lg text-sm md:text-base">Ancient Wisdom + Modern Ritual</div>
+            <div class="bg-white/90 px-4 py-3 md:px-6 border border-[#d4a524] text-[#d4a524] rounded-lg text-sm md:text-base">Conscious Creativity</div>
+            <div class="bg-white/90 px-4 py-3 md:px-6 border border-[#d4a524] text-[#d4a524] rounded-lg text-sm md:text-base">Responsible Elevation Stories</div>
+        </div>
+        <button onclick="contactNow()" class="btn btn-gold text-white w-full sm:w-auto px-6 py-4 md:px-12 md:py-4 font-medium rounded-xl text-sm md:text-base">JOIN WHATSAPP TRIBE • UPLOAD YOUR STORY</button>
+    </div>
+</div>
+
+<div id="page5" class="page hidden" style="background-image: url('comic5.jpg');">
+    <div class="content min-h-screen pt-16 md:pt-24 px-4 md:px-8 pb-12 max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-5xl text-[#d4a524] text-center md:text-left">ABOUT TRICONE</h2>
+        <p class="mt-4 text-white text-center md:text-left text-sm md:text-base">Tricone was created with a simple vision — to elevate smoking culture through consciousness, design and responsibility...</p>
+        
+        <div class="flex flex-wrap gap-2 md:gap-4 justify-center my-8 md:my-12">
+            <img src="comic1.jpg" class="mascot w-20 sm:w-28 md:w-40 border-2 md:border-4 border-[#d4a524] rounded" alt="KA-BLING">
+            <img src="comic2.jpg" class="mascot w-20 sm:w-28 md:w-40 border-2 md:border-4 border-[#d4a524] rounded" alt="ENIGMA">
+            <img src="comic3.jpg" class="mascot w-20 sm:w-28 md:w-40 border-2 md:border-4 border-[#d4a524] rounded" alt="CATTLE">
+            <img src="comic4.jpg" class="mascot w-20 sm:w-28 md:w-40 border-2 md:border-4 border-[#d4a524] rounded" alt="VEILED">
+            <img src="comic5.jpg" class="mascot w-20 sm:w-28 md:w-40 border-2 md:border-4 border-[#d4a524] rounded" alt="KING">
+        </div>
+        
+        <div class="bg-white border-2 border-[#d4a524] p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 rounded-2xl md:rounded-3xl">
+            <div class="text-slate-700 text-sm md:text-base text-center md:text-left">
+                Marketed by: Tricone Tribe (OPC) Private Limited<br>
+                83 S P Mukherjee Road, 4th Floor, Devi Market<br>
+                Kolkata — 700026, India
+            </div>
+            <div class="text-center md:text-left text-sm md:text-base">
+                ✉️ namaste@triconetribe.com<br>
+                📱 +91 91474 24849<br><br>
+                <button onclick="contactNow()" class="btn btn-gold w-full py-4 md:py-6 text-white font-bold text-base md:text-xl rounded-xl">SEND MESSAGE • WE REPLY IN HOURS</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-white text-[#d4a524] py-3 text-center text-[10px] md:text-xs border-t-4 border-[#d4a524] px-4">
+    ✅ WHITE + GOLD THEME • RGB(212, 165, 36) • All black removed • Beautiful hover on every button • Save comics as comic1.jpg to comic5.jpg • Open & enjoy!
+</footer>
+
+<script>
+    // Handles Navigation Tab Switching
+    function switchPage(n) {
+        document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+        document.getElementById('page'+n).classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Handles the custom alert
+    function contactNow() {
+        alert("✅ Message sent instantly to namaste@triconetribe.com\n+91 91474 24849\nThank you for connecting with the TRICONE Tribe! 💛");
+    }
+
+    // Handles Mobile Menu Toggle
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+    }
+
+    // Init first page on load
+    window.onload = () => {
+        switchPage(1);
+    };
+</script>
+</body>
+</html>
